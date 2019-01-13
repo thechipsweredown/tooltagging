@@ -1,3 +1,11 @@
+input[type=radio] {
+  border: 0px;
+  width: 15px;
+}
+label{
+font: 1em sans-serif;
+font-size: 11px;
+}
 body {
     font-family: sans-serif;
     color: #1d1d1d;

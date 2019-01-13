@@ -4,8 +4,87 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="./style.css">  
         <script src="./script.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       </head>
+      <article>
+        <header>
+          <i class = 'fa fa-angle-double-right' style='color:red;'></i>&nbsp;<a id="myBtn" style='color:red;'><strong>Hướng dẫn</strong></a>
+               <div id="myModal" class="modal">
+                  <div class="modal-content">
+                  <span class="close">&times;</span>
+                 <p><strong style='color:blue;'>Không cần nhanh nhưng phải thật chính xác, rảnh rỗi làm cũng được ! ...</strong></p>
+                 <p> Một địa chỉ thông thường của thành phố Hà Nội:  Đại học Bách Khoa Hà Nội, số 1, đường Đại Cồ Việt, quận Hai Bà Trưng, thành phố Hà Nội </p>
+                 <p>Đại học Bách Khoa Hà Nội được gắn với thẻ dự án (tức là tổ chức hành chính hay một địa điểm cụ thể như khu chung cư hay bất động sản nào đó), ở đây sẽ được với là PROJECT<br/>
+                  Tuy nhiên, từ mở đầu của của một thực thể như vậy sẽ được gắn thẻ B_PRO (Begin Project), còn những từ phía sau trong cụm sẽ được gắn thẻ I_PRO (Inside project) <br/>
+                  Ví dụ : <br/>
+                  <strong>Đại</strong> B_PRO <br/>
+                  <strong>học</strong> I_PRO <br/>
+                  <strong>Bách</strong> I_PRO <br/>
+                  <strong>Khoa</strong> I_PRO <br/>
+                  Cứ như vậy, trong một cụm tên, từ đứng đầu luôn là thẻ có B, các từ tiếp sau là thẻ có chữ I </p>
+                <p> Thỉnh thoảng sẽ có những từ như từ dự án xuất hiện, đây là dấu hiệu cho biết ngay sau đó là tên dự án, kiểu này là kiểu PRO_TYPE</p>
+                <p> số 1 ở đây là số nhà được gắn thẻ NUMBER, lưu ý tất cả những số hiệu mà nhỏ hơn đường đều coi là số nhà, kể cả hẻm hay ngõ cũng vậy</p>
+                <p> Như ở phần trên, những từ báo hiệu cho ta biết ngay sau là số nhà sẽ đều được gắn thẻ NUMBER_TYPE</p>
+                Ví dụ :<br/>
+                <strong>Số </strong>     NUMBER_TYPE <br/>
+                <strong>1</strong>       NUMBER <br/>
+                hay :<br/>
+                <strong>Ngõ</strong>     NUMBER_TYPE<br/>
+                <strong>1</strong>        NUMBER<br/>
+                <p> Nếu chỉ có 1 thì ta không cần gán NUMBER_TYPE mà chỉ gán NUMBER cho số 1</p>
+                <p> Ở thẻ NUMBER không có BEGIN hay INSIDE mà chỉ có NUMBER </p>
+                <p>Tương tự ta có các thẻ khác tương tự và đều bắt đầu là B cộng với thẻ, tiếp theo là I cộng với thẻ</p>
+                <p> STREET_TYPE dành cho chữ "đường" trong ví dụ trên</p>
+                <p>Gắn mẫu cho câu bên trên</p>
+                <strong style='color:red;'>Đại</strong> B_PRO<br/>
+                <strong style='color:red;'>học</strong> I_PRO<br/>
+                <strong style='color:red;'>Bách</strong> I_PRO<br/>
+                <strong style='color:red;'>Khoa</strong> I_PRO<br/>
+                <strong style='color:red;'>Hà</strong> I_PRO<br/>
+                <strong style='color:red;'>Nội</strong>  I_PRO<br/>
+                <strong style='color:red;'>,</strong> OTHER (những kí tự như dấu câu, dấu gạch không phải chữ mà đứng một mình thì gán thẻ OTHER )<br/>
+                <strong style='color:red;'>số</strong> NUMBER_TYPE<br/>
+                <strong style='color:red;'>1</strong> NUMBER<br/>
+                <strong style='color:red;'>,</strong> OTHER<br/>
+                <strong style='color:red;'>đường</strong> STREET_TYPE<br/>
+                <strong style='color:red;'>Đại</strong> B_STREET<br/>
+                <strong style='color:red;'>Cồ </strong>I_STREET<br/>
+                <strong style='color:red;'>Việt</strong> I_STREET<br/>
+                <strong style='color:red;'>,</strong> OTHER<br/>
+                <strong style='color:red;'>quận</strong> DIST_TYPE (viết tắt của district type) chỉ mức quận-huyện hoặc thành phố trực thuộc tỉnh như Đà lạt hay Buôn Mê Thuột.<br/>
+                <strong style='color:red;'>Hai</strong> B_DIST<br/>
+                <strong style='color:red;'>Bà</strong> I_DIST<br/>
+                <strong style='color:red;'>Trưng</strong> I_DIST<br/>
+                <strong style='color:red;'>,</strong> OTHER<br/>
+                <strong style='color:red;'>Thành</strong> CITY_TYPE (dành cho cả từ viết tắt thừ Tp hoặc tp hay tương tự vậy)<br/>
+                <strong style='color:red;'>phố</strong> CITY_TYPE<br/>
+                <strong style='color:red;'>Hà</strong> B_CITY<br/>
+                <strong style='color:red;'>Nội</strong>  I_CITY<br/>
+                <p>Ngoài ra còn có thẻ phường-xã là : WARD_TYPE, B_WARD, I_WARD</p>
+                Ví dụ : <br/>
+                <strong style='color:red;'>phường</strong> WARD_TYPE  <br/>
+                <strong style='color:red;'>Nhân</strong> B_WARD<br/>
+                <strong style='color:red;'>Chính</strong> I_WARD<br/>
+                <p>Có thể có những câu không có đủ, hoặc không có những TYPE như đường nào, xã nào, mà chỉ ghi mỗi tên thì vẫn gán thẻ bình thường</p>  
+                <p>Trường hợp có cả tên đường giống tên quận, ví dụ: Hai Bà Trưng, Hà Nội</p> thì gắn theo mức ưu tiên:
+                <p>dự án - số nhà - đường - xã, phường - quận,huyện,thành phố trực thuộc tỉnh - tỉnh hoặc thành phố trực thuộc trung ương.  </p>
+                <p>Như vậy sẽ gán Hai Bà Trưng là Quận vì Quận gần Thành Phố hơn Đường mặc dù Hà Nội có cả quận Hai Bà Trưng lẫn đường Hai Bà Trưng</p>
+                <p>Từ đứng đầu trong một cụm luôn là thẻ B_, nếu giả sử cụm chỉ có một chữ hay số, ví dụ:</p> 
+                <strong>Quận</strong> DIST_TYPE<br/>
+                <strong>1</strong> B_DIST <br/>
+                thì thẻ đó là thẻ B_, trong trường hợp kia là B_DIST<br/>
+                <p><strong style='color:red;'>Lưu ý</strong> : Kiểu _TYPE không có B hay I, chỉ có 1 kiểu duy nhất là TYPE như PRO_TYPE, STREET_TYPE... </p>
+                <p>Ví dụ từ "Dự" và từ "Án" thì cả hai từ này đều là PRO_TYPE, cả "Thành" và "Phố" đều là STREET_TYPE</p>
+                Có thể nhiều địa chỉ lạ mà bạn không biết thì hãy tra Google :(, không cần nhanh đâu, chính xác là được ? <br/>
+                <p> Hello I am D </p>
+              </div>
+
+</div>
+        </header>
+      </article>
 <body>
   <br/>
-</body>   
+</body> 
+  
 </html>

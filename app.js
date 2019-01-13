@@ -35,19 +35,25 @@ function getdata(filename){
 
 function gettag(num){
     switch(num){
-        case 0 : return "O";
-        case 1 : return "SO";
-        case 2 : return "DU_AN_TYPE";
-        case 3 : return "DU_AN";
-        case 4 : return "DUONG_TYPE";
-        case 5 : return "DUONG";
-        case 6 : return "PHUONG_XA_TYPE";
-        case 7 : return "PHUONG_XA" ;
-        case 8 : return "QUAN_HUYEN_TYPE";
-        case 9 : return "QUAN_HUYEN";
-        case 10 : return "THANH_PHO_TYPE";
-        case 11 : return "THANH_PHO";
-        default : return "O";
+        case 0 : return "OTHER";
+        case 1 : return "NUMBER";
+        case 2 : return "PRO_TYPE";
+        case 3 : return "B_PRO";
+        case 4: return "I_PRO";
+        case 5 : return "STREET_TYPE";
+        case 6 : return "B_STREET";
+        case 7 : return "I_STREET";
+        case 8 : return "WARD_TYPE" ;
+        case 9 : return "B_WARD";
+        case 10 : return "I_WARD";
+        case 11 : return "DIST_TYPE";
+        case 12 : return "B_DIST";
+        case 13 : return "I_DIST";
+        case 14 : return "CITY_TYPE";
+        case 15 : return "B_CITY";
+        case 16 : return "I_CITY";
+        case 17 : return "NUMBER_TYPE"
+        default : return "OTHER";
     }
 }
 
@@ -62,16 +68,18 @@ app.post('/tag', function(req, res, next) {
         for(var j = 0; j < data[i].length;j++){
             var name = data[i][j]["name"]
             var tag = Number(data[i][j]["tag"])
-            fs.appendFileSync(__dirname+'/data/res-'+s+'.txt', name + " " + gettag(tag));
-            fs.appendFileSync(__dirname+'/data/res-'+s+'.txt', "\n");
+            fs.appendFileSync(__dirname+'/data/results/res-'+s+'.txt', name + " " + gettag(tag));
+            fs.appendFileSync(__dirname+'/data/results/res-'+s+'.txt', "\n");
         }
-        fs.appendFileSync(__dirname+'/data/res-'+s+'.txt', "\n");
+        fs.appendFileSync(__dirname+'/data/results/res-'+s+'.txt', "\n");
     }
+    fs.close
     res.redirect("http://localhost:8000/")
   });
 
 app.get('/data',function(req,res,next){
-    var filename = __dirname+'/data/tag.txt';
+    var num = Math.floor(Math.random() * 98) + 1;
+    var filename = __dirname+'/data/source/tag_'+num.toString()+'.txt';
     var data = getdata(filename)
     res.send(data)
 })  ;

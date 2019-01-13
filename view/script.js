@@ -21,7 +21,7 @@ $(document).ready(function() {
             $('body').append("<form id ="+id+" ><fieldset><div class ='row><div class = 'col-md-5'><strong>"+res[i][j]+"</strong></div>"
         +"<div class = 'col-md-7'>"
         +"<label class='label' for='"+id+"-0'>"+"<input type='radio' id = '"+id+"-0' class='checkbox-inline' value='0' name='"+id+"'>"+"<i>OTHER</i></label>"
-        +"<label class='label' for='"+id+"-17'>"+"<input type='radio' id = '"+id+"-17' class='checkbox-inline' value='17' name='"+id+"'>"+"<i>NUMBER_TYPE</i></label>
+        +"<label class='label' for='"+id+"-17'>"+"<input type='radio' id = '"+id+"-17' class='checkbox-inline' value='17' name='"+id+"'>"+"<i>NUMBER_TYPE</i></label>"
         +"<label class='label' for='"+id+"-1'>"+"<input type='radio' id = '"+id+"-1' class='checkbox-inline' value='1' name='"+id+"'>"+"<i>NUMBER</i></label>"
         +"<label class='label' for='"+id+"-2'>"+"<input type='radio' id = '"+id+"-2' class='checkbox-inline' value='2' name='"+id+"'>"+"<i>PRO_TYPE</i></label>"
         +"<label class='label' for='"+id+"-3'>"+"<input type='radio' id = '"+id+"-3' class='checkbox-inline' value='3' name='"+id+"'>"+"<i>B_PRO</i></label>"

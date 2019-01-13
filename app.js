@@ -1,5 +1,6 @@
 var express = require('express');
 var app= express();
+var cors = require('cors');
 var bodyParser = require("body-parser");
 global.__base = process.cwd() + '/';
 var fs = require('fs');
@@ -7,7 +8,15 @@ var fs = require('fs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(global.__base + '/view'));
-
+app.enable('trust proxy')
+app.set('trust proxy', true)
+app.options(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', '*'); 
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+app.use(cors())
 function getdata(filename){
     var arr = []
     var text = fs.readFileSync(filename, 'utf8');
@@ -74,7 +83,7 @@ app.post('/tag', function(req, res, next) {
         fs.appendFileSync(__dirname+'/data/results/res-'+s+'.txt', "\n");
     }
     fs.close
-    res.redirect("http://localhost:8000/")
+    res.redirect("http://8ea4f6c6.ngrok.io/")
   });
 
 app.get('/data',function(req,res,next){
@@ -84,4 +93,4 @@ app.get('/data',function(req,res,next){
     res.send(data)
 })  ;
 
-app.listen(process.env.PORT||8000);
+app.listen(process.env.PORT||3000);

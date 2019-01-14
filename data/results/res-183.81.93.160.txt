@@ -1822,3 +1822,35 @@ Hồ B_CITY
 Chí I_CITY
 Minh I_CITY
 
+Phố STREET_TYPE
+Nguyễn B_STREET
+Khắc I_STREET
+Nhu I_STREET
+, OTHER
+Bắc B_DIST
+Giang I_DIST
+, OTHER
+Bắc B_CITY
+Giang I_CITY
+
+Đường STREET_TYPE
+Vĩnh B_STREET
+Hưng I_STREET
+, OTHER
+Phường WARD_TYPE
+Mai B_WARD
+Động I_WARD
+, OTHER
+Hoàng B_DIST
+Mai I_DIST
+, OTHER
+Hà B_CITY
+Nội I_CITY
+
+Quận DIST_TYPE
+Long B_DIST
+Biên I_DIST
+, OTHER
+Hà B_CITY
+Nội I_CITY
+

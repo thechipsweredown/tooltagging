@@ -15,8 +15,8 @@ Nội I_CITY
 Đường STREET_TYPE
 Xa B_STREET
 Lộ I_STREET
-Hà B_CITY
-Nội I_CITY
+Hà I_STREET
+Nội I_STREET
 , OTHER
 phường WARD_TYPE
 An B_WARD
@@ -36,7 +36,8 @@ Trân I_PRO
 Central I_PRO
 Park I_PRO
 , OTHER
-LiÊn.Chiểu B_DIST
+LiÊn B_DIST
+Chiểu I_DIST
 , OTHER
 Đà B_CITY
 Nẵng I_CITY
@@ -240,7 +241,7 @@ Hồ B_CITY
 Chí I_CITY
 Minh I_CITY
 
-Láng B_WARD
+Láng B_STREET
 , OTHER
 Đống B_DIST
 Đa I_DIST

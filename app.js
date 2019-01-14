@@ -38,7 +38,7 @@ function getdata(filename,ip){
     }
     var a = text.toString().split("\n")
     a.splice(0,arr.length)
-    // fs.writeFileSync(filename,a.join("\n"))
+    fs.writeFileSync(filename,a.join("\n"))
     return arr  
 }
 
@@ -95,6 +95,7 @@ app.get('/data',function(req,res,next){
 
 app.post('/exit',function(req,res,next){
     var num = Math.floor(Math.random() * 98) + 1;
+    console.log(num)
     var filename = __dirname+'/data/source/tagt_'+num.toString()+'.txt';
     var data = req.body.data
     for(var i = 0; i < data.length;i++){

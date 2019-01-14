@@ -291,7 +291,9 @@ body {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
-  
+  a{
+    text-decoration: none;
+}
   /* The Close Button */
   .close {
     color: #aaa;

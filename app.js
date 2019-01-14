@@ -17,7 +17,7 @@ app.options(function(req, res, next) {
   next();
 });
 app.use(cors())
-function getdata(filename){
+function getdata(filename,ip){
     var arr = []
     var text = fs.readFileSync(filename, 'utf8');
     var file = text.toString().split("\n")
@@ -38,7 +38,7 @@ function getdata(filename){
     }
     var a = text.toString().split("\n")
     a.splice(0,arr.length)
-    fs.writeFileSync(filename,a.join("\n"))
+    // fs.writeFileSync(filename,a.join("\n"))
     return arr  
 }
 
@@ -83,7 +83,7 @@ app.post('/tag', function(req, res, next) {
         fs.appendFileSync(__dirname+'/data/results/res-'+s+'.txt', "\n");
     }
     fs.close
-    res.redirect("http://8ea4f6c6.ngrok.io/")
+    res.end("")
   });
 
 app.get('/data',function(req,res,next){
@@ -92,5 +92,25 @@ app.get('/data',function(req,res,next){
     var data = getdata(filename)
     res.send(data)
 })  ;
+
+app.post('/exit',function(req,res,next){
+    var num = Math.floor(Math.random() * 98) + 1;
+    var filename = __dirname+'/data/source/tagt_'+num.toString()+'.txt';
+    var data = req.body.data
+    for(var i = 0; i < data.length;i++){
+        if(data[i]==="END"){
+            fs.appendFileSync(filename,"\n");
+        }else{
+            fs.appendFileSync(filename,data[i])
+            fs.appendFileSync(filename,"\n");
+        }
+    }
+    fs.close
+    res.end("OK")
+});
+
+app.get('/out',function(req,res,next){
+    res.sendFile(__dirname+'/view/'+'exit.html');
+});
 
 app.listen(process.env.PORT||3000);

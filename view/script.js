@@ -1,8 +1,10 @@
 $(document).ready(function() {  
-    $.get( "http://8ea4f6c6.ngrok.io/data", function( data ) {
+     var domain = "http://8ea4f6c6.ngrok.io/"
+     //var domain = "http://localhost:3000/"
+    $.get( domain+"data", function( data_rev ) {
         var res = []
         var temp = []
-        data.forEach(element => {
+        data_rev.forEach(element => {
         if(element != "END") temp.push(element)
         else {
             if(temp.length > 0){
@@ -63,12 +65,25 @@ $(document).ready(function() {
                 console.log(data_send)
                 $.ajax({
                     type: 'post',
-                    url: 'http://8ea4f6c6.ngrok.io/tag',
+                    url: domain+'tag',
                     data: JSON.stringify(data_send),
                     contentType: "application/json; charset=utf-8",
                     traditional: true,
                     success: function (data) {
                     location.reload();
+                    }
+                });
+        });
+        $("#exit").click(function(){
+                var data_1 = {data : data_rev}
+                $.ajax({
+                    type: 'post',
+                    url: domain+'exit',
+                    data: JSON.stringify(data_1),
+                    contentType: "application/json; charset=utf-8",
+                    traditional: true,
+                    success: function (data) {
+                        window.location.replace(domain+"out")
                     }
                 });
         });
@@ -100,3 +115,4 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }};
+//http://8ea4f6c6.ngrok.io/

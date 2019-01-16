@@ -291,9 +291,38 @@ body {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
+  .modal1 {
+    font-family: 'Sarabun', sans-serif;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content1 {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
   a{
     text-decoration: none;
 }
+  .close1 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
   /* The Close Button */
   .close {
     color: #aaa;
@@ -311,4 +340,17 @@ body {
 
   #myBtn{
     font-family: 'Sarabun', sans-serif;
+  }
+  #myProgress {
+    width: 100%;
+    background-color: #ddd;
+  }
+  
+  #myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
   }

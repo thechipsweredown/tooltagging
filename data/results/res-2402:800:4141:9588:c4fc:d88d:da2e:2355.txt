@@ -26,9 +26,10 @@ XH NUMBER
 thích B_STREET
 quảng I_STREET
 đức I_STREET
-p5phú B_WARD
+p5 B_WARD
 , OTHER
-nhuận B_DIST
+phú B_DIST
+nhuận I_DIST
 
 134/17/11 NUMBER
 Lý B_STREET

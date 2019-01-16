@@ -1,0 +1,36 @@
+Đường STREET_TYPE
+2 B_STREET
+, OTHER
+Gò B_DIST
+Vấp I_DIST
+, OTHER
+Tp.HCM B_DIST
+
+Dự PRO_TYPE
+án PRO_TYPE
+Khu B_PRO
+đô I_PRO
+thị I_PRO
+Trung I_PRO
+Hòa I_PRO
+- OTHER
+Nhân B_WARD
+Chính I_WARD
+, OTHER
+Thanh B_DIST
+Xuân I_DIST
+, OTHER
+Hà B_CITY
+Nội I_CITY
+
+Đường STREET_TYPE
+Lê B_STREET
+Thanh I_STREET
+Nghị I_STREET
+, OTHER
+Hải B_DIST
+Châu I_DIST
+, OTHER
+Đà B_CITY
+Nẵng I_CITY
+

@@ -96,10 +96,10 @@ function getStat() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
        var complete = this.responseText
-       document.getElementById("content_stat").innerHTML = complete+"/10000";
+       document.getElementById("content_stat").innerHTML = complete+"/8000";
 
        var elem = document.getElementById("myBar"); 
-         var per = Number(complete)*100/10000;  
+         var per = Number(complete)*100/8000;  
          elem.style.width = per + '%'; 
          elem.innerHTML = per * 1  + '%';
       }

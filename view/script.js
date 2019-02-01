@@ -1,4 +1,4 @@
-var domain = "http://8ea4f6c6.ngrok.io/"
+var domain = "http://e72b454b.ngrok.io/"
 //var domain = "http://localhost:3000/"
 $(document).ready(function() {  
      var domain = "http://8ea4f6c6.ngrok.io/"

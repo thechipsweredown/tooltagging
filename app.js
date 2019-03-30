@@ -87,26 +87,13 @@ app.post('/tag', function(req, res, next) {
   });
 
 app.get('/data',function(req,res,next){
-<<<<<<< HEAD
-
     var filename = __dirname+'/data/source/tag.txt';
-=======
-    var num = Math.floor(Math.random() * 98) + 1;
-    console.log("file : "+ num.toString())
-    var filename = __dirname+'/data/source/tag_'+num.toString()+'.txt';
->>>>>>> 91804ecbb0643aad01c125e3397681d6637aa211
     var data = getdata(filename)
     res.send(data)
 })  ;
 
 app.post('/exit',function(req,res,next){
-<<<<<<< HEAD
     var filename = __dirname+'/data/source/tag.txt';
-=======
-    var num = Math.floor(Math.random() * 98) + 1;
-    console.log("restore : "+num.toString())
-    var filename = __dirname+'/data/source/tag_'+num.toString()+'.txt';
->>>>>>> 91804ecbb0643aad01c125e3397681d6637aa211
     var data = req.body.data
     for(var i = 0; i < data.length;i++){
         if(data[i]==="END"){

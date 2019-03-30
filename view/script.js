@@ -1,6 +1,6 @@
 $(document).ready(function() {  
-     var domain = "http://8ea4f6c6.ngrok.io/"
-    // var domain = "http://localhost:3000/"
+    // var domain = "http://8ea4f6c6.ngrok.io/"
+    var domain = "http://localhost:3000/"
     $.get( domain+"data", function( data_rev ) {
         var res = []
         var temp = []

@@ -87,14 +87,26 @@ app.post('/tag', function(req, res, next) {
   });
 
 app.get('/data',function(req,res,next){
+<<<<<<< HEAD
 
     var filename = __dirname+'/data/source/tag.txt';
+=======
+    var num = Math.floor(Math.random() * 98) + 1;
+    console.log("file : "+ num.toString())
+    var filename = __dirname+'/data/source/tag_'+num.toString()+'.txt';
+>>>>>>> 91804ecbb0643aad01c125e3397681d6637aa211
     var data = getdata(filename)
     res.send(data)
 })  ;
 
 app.post('/exit',function(req,res,next){
+<<<<<<< HEAD
     var filename = __dirname+'/data/source/tag.txt';
+=======
+    var num = Math.floor(Math.random() * 98) + 1;
+    console.log("restore : "+num.toString())
+    var filename = __dirname+'/data/source/tag_'+num.toString()+'.txt';
+>>>>>>> 91804ecbb0643aad01c125e3397681d6637aa211
     var data = req.body.data
     for(var i = 0; i < data.length;i++){
         if(data[i]==="END"){
@@ -106,6 +118,22 @@ app.post('/exit',function(req,res,next){
     }
     fs.close
     res.end("OK")
+});
+
+app.get('/list',function(req,res,next){
+    var path =  __dirname+'/data/results/'
+    var count = 0
+    fs.readdir(path, function(err, items) {
+        for (var i=0; i<items.length; i++) {
+            var text = fs.readFileSync(path+items[i], 'utf8');
+            var arr = text.toString().split("\n");
+            for(var j = 0; j < arr.length;j++){
+                if(arr[j]==="") count++
+            }
+        }
+        count -= items.length
+        res.end(count.toString())
+    });
 });
 
 app.get('/out',function(req,res,next){
